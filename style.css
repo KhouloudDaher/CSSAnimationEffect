@@ -1,0 +1,83 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:rgb(32,1,32);
+}
+.container{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   -webkit-box-reflect: below 1px linear-gradient(#0001,#0004);
+
+}
+.container .loader{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: transparent;
+    animation: animate 2s linear infinite;
+}
+@keyframes animate{
+    0%{
+       transform: rotate(0deg);
+    }
+    100%{
+       transform: rotate(360deg);
+    }
+}
+.container .loader::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to top,transparent,rgba(240, 85, 206, 0.911));
+    background-size: 75px 135px;
+    background-repeat: no-repeat;
+    border-top-left-radius:75px ;
+    border-bottom-left-radius: 75px;
+}
+.container .loader::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+    background: orchid;
+    border-radius: 50%;
+    z-index: 7.5;
+    box-shadow: 0 0 10px orchid,
+                0 0 20px orchid,
+                0 0 30px orchid,
+                0 0 40px orchid,
+                0 0 50px orchid,
+                0 0 60px orchid,
+                0 0 70px orchid,
+                0 0 80px orchid,
+                0 0 90px orchid,
+                0 0 100px orchid;
+
+}
+.container .loader span{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background:rgb(32,1,32) 50%;
+    border-radius: 50%;
+}
